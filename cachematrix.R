@@ -2,7 +2,6 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
 # Matrix inversion is usually a costly computation and there may be some benefit
 # to caching the inverse of a matrix rather than compute it repeatedly. The
 # following two functions are used to cache the inverse of a matrix
@@ -21,16 +20,12 @@ makeCacheMatrix <- function(x = matrix()) {
        getinverse = getinverse)
 }
 
-
-## Write a short comment describing this function
-
 # The following function returns the inverse of the matrix. It first checks if
 # the inverse has already been computed. If so, it gets the result and skips the
 # computation. If not, it computes the inverse, sets the value in the cache via
 # setinverse function
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
   inver <- x$getinverse()
   if(!is.null(inver)) {
     message("getting cached data.")
@@ -42,6 +37,7 @@ cacheSolve <- function(x, ...) {
   inver
 }
 
+# Test the code with data below
 # x = rbind(c(1, 2), c(2, 1))
 # inv = makeCacheMatrix(x)
 # inv$get()
